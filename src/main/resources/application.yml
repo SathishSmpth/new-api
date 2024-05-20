@@ -1,0 +1,86 @@
+spring:
+  application:
+    name: application
+  datasource:
+    url: jdbc:postgresql://localhost:5433/kamatchi-botique
+    username: postgres
+    password: sathish
+  jpa:
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-circular-references: true
+
+secretKey: "7070200000000007"
+
+elasticsearch:
+  cluster:
+    name: "shopizer"
+  mode: "remote"
+  server:
+    host: "localhost"
+    protocole: "http"
+    port: 9200
+    proxy:
+      user: ""
+      password: ""
+  security:
+    enabled: false
+    user: "elastic"
+    password: "changeme"
+
+search:
+  credentials:
+    username: "admin"
+    password: "admin"
+  clusterName: "opensearch-cluster"
+  jksAbsolutePath: ""
+  searchLanguages: "en,fr"
+  host:
+    - scheme: "http"
+      host: "0.0.0.0"
+      port: 9200
+    - scheme: "http"
+      host: "0.0.0.0"
+      port: 9201
+  noindex: false
+
+config:
+  emailSender: "default"
+  emailSender.region: "US_EAST_1"
+  cms:
+    method: "default"
+    contentUrl: "http://localhost:8080"
+    static:
+      path: "/static"
+    store:
+      location: "./files/store"
+    files:
+      location: "./files/repos"
+    http:
+      path:
+        location: ""
+    aws:
+      bucket: ""
+      region: "us-east-1"
+    gcp:
+      bucket: ""
+  displayShipping: true
+  shippingDistancePreProcessor:
+    apiKey: ""
+    acceptedZones: "QC,ON,AB,NY,MA"
+  googleMapsKey: ""
+  recaptcha:
+    secretKey: "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
+    siteKey: "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  shipping:
+    rule:
+      priceByDistance: "PriceByDistance.drl"
+      shippingModuleDecision: "ShippingDecision.drl"
+db:
+  init:
+    data: true
+
+logging:
+  level:
+    org.springframework.context.annotation.ConfigurationClassParser: DEBUG
